@@ -23,14 +23,27 @@
 #define false 0
 
 int running = 1;
+int loopTime = 0;
+int motorSpeed = 0;
 
 task main()
 {
 	//StartTask(Hello);
-	motor[motorD] = 60;
-	wait1Msec(3000);
-
+	motor[motorA] = 10;
+	wait1Msec(300);
 	while(running) {
+		int accl = 5;
+		for(int i = 0; i < 100; i++) {
+			if(motor[motorA] < 100 && motor[motorA] > -100){
+				motor[motorA] += accl;
+				wait1Msec(100);
+			} else {
+				accl = accl * -1;
+				motor[motorA] += accl;
+			}
+			motorSpeed = motor[motorA];
+			loopTime = i;
+		}
+		running = 0;
 	}
-
 }

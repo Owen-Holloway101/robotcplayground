@@ -1,6 +1,9 @@
 //Owen Holloway 2013
 //RSU Team-51
 
+//NXT motor header
+//tasks for making each NXT motor move can be found here
+
 task TaskMotorA() {
 	motor[motorA] = 10;
 	wait1Msec(300);

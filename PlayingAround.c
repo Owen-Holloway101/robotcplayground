@@ -29,11 +29,15 @@ ROBOTC interface and language
 int running = 1;
 int motorASpeed = 0;
 int motorBSpeed = 0;
+int motorDSpeed = 0;
+
 #include "nxtmotors.h"
+#include "matrixmotors.h"
 
 task main() {
-	StartTask(TaskMotorA);
-	StartTask(TaskMotorB);
+	//StartTask(TaskMotorA);
+	//StartTask(TaskMotorB);
+	StartTask(TaskMotorD);
 	while(running) {
 		wait10Msec(1000);
 		running = 0;

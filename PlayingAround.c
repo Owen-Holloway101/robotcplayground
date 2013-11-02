@@ -1,8 +1,12 @@
 //Owen Holloway 2013
-//A change
 //RSU Team-51
 
-//Config
+/*
+This is the playing around file I used to get used to the
+ROBOTC interface and language
+*/
+
+//Config for motors sensors and the such
 #pragma config(Hubs,   S1, MatrxRbtcs, none,     none,     none)
 #pragma config(Hubs,   S2, MatrxRbtcs, none,     none,     none)
 #pragma config(Sensor, S1,           ,sensorI2CMuxController)
@@ -28,8 +32,8 @@ int motorBSpeed = 0;
 #include "nxtmotors.h"
 
 task main() {
-	StartTask(MotorA);
-	StartTask(MotorB);
+	StartTask(TaskMotorA);
+	StartTask(TaskMotorB);
 	while(running) {
 		wait10Msec(1000);
 		running = 0;

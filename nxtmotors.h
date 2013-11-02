@@ -1,4 +1,7 @@
-task MotorA() {
+//Owen Holloway 2013
+//RSU Team-51
+
+task TaskMotorA() {
 	motor[motorA] = 10;
 	wait1Msec(300);
 	int motorAAdd = 5;
@@ -14,7 +17,7 @@ task MotorA() {
 	}
 }
 
-task MotorB() {
+task TaskMotorB() {
 	motor[motorB] = 10;
 	wait1Msec(300);
 	int motorBAdd = 5;
@@ -29,3 +32,7 @@ task MotorB() {
 		motorBSpeed = motor[motorB];
 	}
 }
+/*
+task TaskMotorC() {
+}
+*/

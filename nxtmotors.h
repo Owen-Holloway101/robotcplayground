@@ -18,6 +18,6 @@ task TaskMotorB() {
 
 task TaskMotorC() {
 	while(running) {
-		motor[motorC] = motorBSpeed;
+		motor[motorC] = motorCSpeed;
 	}
 }

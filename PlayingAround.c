@@ -59,9 +59,8 @@ task main() {
 	StartTask(TaskServo1);
 
 	//Motor Control
-	//StartTask(MotorDPulse);
 	while(running) {
-		wait10Msec(1000);
+		wait10Msec(10000);
 		running = 0;
 	}
 }

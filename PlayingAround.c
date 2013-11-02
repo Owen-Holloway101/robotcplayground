@@ -45,6 +45,7 @@ int motorDSpeed = 0;
 task main() {
 	StartTask(TaskMotorA);
 	StartTask(TaskMotorB);
+	StartTask(TaskMotorC);
 	StartTask(TaskMotorD);
 	while(running) {
 		wait10Msec(1000);

@@ -25,7 +25,7 @@
 int running = 1;
 int motorASpeed = 0;
 int motorBSpeed = 0;
-#include "motors.h"
+#include "nxtmotors.h"
 
 task main() {
 	StartTask(MotorA);

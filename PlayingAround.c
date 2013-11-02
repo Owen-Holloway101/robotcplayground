@@ -38,7 +38,8 @@ int running = 1;
 int motorASpeed = 0;
 int motorBSpeed = 0;
 int motorCSpeed = 0;
-int motorDSpeed = 0;
+int motorDSpeed = 30;
+int motorESpeed = -30;
 
 #include "nxtmotors.h"
 #include "matrixmotors.h"
@@ -54,6 +55,7 @@ task main() {
 
 	//Matrix 1 motor tasks
 	StartTask(TaskMotorD);
+	StartTask(TaskMotorE);
 
 	//Matrix 1 servo tasks
 	StartTask(TaskServo1);

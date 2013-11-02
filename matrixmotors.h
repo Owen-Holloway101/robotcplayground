@@ -9,3 +9,9 @@ task TaskMotorD() {
 		motor[motorD] = motorDSpeed;
 	}
 }
+
+task TaskMotorE() {
+	while(running) {
+		motor[motorE] = motorESpeed;
+	}
+}

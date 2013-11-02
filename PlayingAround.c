@@ -22,6 +22,14 @@ ROBOTC interface and language
 #pragma config(Motor,  mtr_Matrix_S2_2, MotorI, tmotorMatrix, openLoop)
 #pragma config(Motor,  mtr_Matrix_S2_3, MotorJ, tmotorMatrix, openLoop)
 #pragma config(Motor,  mtr_Matrix_S2_4, MotorK, tmotorMatrix, openLoop)
+#pragma config(Servo, srvo_Matrix_S1_1, servo1, tServoStandard)
+#pragma config(Servo, srvo_Matrix_S1_2, servo2, tServoStandard)
+#pragma config(Servo, srvo_Matrix_S1_3, servo3, tServoStandard)
+#pragma config(Servo, srvo_Matrix_S1_4, servo4, tServoStandard)
+#pragma config(Servo, srvo_Matrix_S2_1, servo5, tServoStandard)
+#pragma config(Servo, srvo_Matrix_S2_2, servo6, tServoStandard)
+#pragma config(Servo, srvo_Matrix_S2_3, servo7, tServoStandard)
+#pragma config(Servo, srvo_Matrix_S2_4, servo8, tServoStandard)
 
 #define true 1
 #define false 0
@@ -35,8 +43,8 @@ int motorDSpeed = 0;
 #include "matrixmotors.h"
 
 task main() {
-	//StartTask(TaskMotorA);
-	//StartTask(TaskMotorB);
+	StartTask(TaskMotorA);
+	StartTask(TaskMotorB);
 	StartTask(TaskMotorD);
 	while(running) {
 		wait10Msec(1000);

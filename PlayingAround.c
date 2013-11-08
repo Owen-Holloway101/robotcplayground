@@ -42,8 +42,8 @@ int running = 1;
 int motorASpeed = 0;
 int motorBSpeed = 0;
 int motorCSpeed = 0;
-int motorDSpeed = 30;
-int motorESpeed = -30;
+int motorDSpeed = 0;
+int motorESpeed = 0;
 
 int j1_s1_x = 0;
 int j1_s1_y = 0;
@@ -57,8 +57,10 @@ int j1_s2_y = 0;
 #include "motorcontrol.h"
 #include "screen.h"
 #include "controller.h"
+#include "sounds.h"
 
 task main() {
+	nVolume = 4;
 
 	//NXT Motor tasks
 	StartTask(TaskMotorA);
@@ -75,8 +77,12 @@ task main() {
 	//Display task
 	StartTask(screenDisplay);
 
+	//Sounds task
+	StartTask(sounds);
+
 	//Controller
 	StartTask(controllerSet);
+	StartTask(motorControl);
 
 	//Motor Control
 	while(running) {

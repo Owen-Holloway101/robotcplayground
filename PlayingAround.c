@@ -31,6 +31,10 @@ ROBOTC interface and language
 #pragma config(Servo, srvo_Matrix_S2_3, servo7, tServoStandard)
 #pragma config(Servo, srvo_Matrix_S2_4, servo8, tServoStandard)
 
+
+//External drivers
+#include "JoystickDriver.c"
+
 #define true 1
 #define false 0
 
@@ -41,10 +45,18 @@ int motorCSpeed = 0;
 int motorDSpeed = 30;
 int motorESpeed = -30;
 
+int j1_s1_x = 0;
+int j1_s1_y = 0;
+
+int j1_s2_x = 0;
+int j1_s2_y = 0;
+
 #include "nxtmotors.h"
 #include "matrixmotors.h"
 #include "matrixservos.h"
 #include "motorcontrol.h"
+#include "screen.h"
+#include "controller.h"
 
 task main() {
 
@@ -59,6 +71,12 @@ task main() {
 
 	//Matrix 1 servo tasks
 	StartTask(TaskServo1);
+
+	//Display task
+	StartTask(screenDisplay);
+
+	//Controller
+	StartTask(controllerSet);
 
 	//Motor Control
 	while(running) {
